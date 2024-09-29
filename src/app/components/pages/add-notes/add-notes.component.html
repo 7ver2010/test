@@ -1,0 +1,28 @@
+<div class="notes">
+  <p class="notes_title">Введите текст или выберите файл</p>
+
+  @if(imageControl.value === null) {
+    <input
+      [formControl]="textControl"
+      type="text"
+      placeholder="Введите текст"
+      class="notes_input add_text"
+    >
+  }
+
+  @if(textControl.value === "") {
+    <input
+      [formControl]="imageControl"
+      (change)="fileHandle($event)"
+      type="file"
+      accept="image/png, image/jpeg"
+      class="notes_input add_image"
+    >
+  }
+
+  @if(textControl.value !== "" || imageControl.value !== null) {
+    <button class="save" (click)="saveAddNoteHandler()">Сохранить</button>
+  }
+
+  <button class="close" (click)="closeAddNoteHandler()"></button>
+</div>

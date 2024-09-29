@@ -1,0 +1,14 @@
+<div #noteEl class="note">
+  @if(note?.text) {
+    <div class="note_text">
+      <p class="note_text_item">{{ note?.text }}</p>
+    </div>
+  }
+
+  @if(note?.image) {
+    <div class="note_img">
+      <img [src]="note?.image" height="100" width="100" alt="Image">
+    </div>
+  }
+  <button class="remove_button" type="button" (click)="removeHandler()">Удалить</button>
+</div>

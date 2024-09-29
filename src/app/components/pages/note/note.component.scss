@@ -1,0 +1,25 @@
+:host {
+  display: block;
+  position: absolute;
+  background-color: #dbe7e6;
+  z-index: 10;
+  cursor: move;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.note_text {
+  border: 2px solid red;
+}
+
+.note_text_item {
+  margin: 15px 10px;
+}
+
+.remove_button {
+  max-width: 150px;
+}

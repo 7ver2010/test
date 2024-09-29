@@ -1,0 +1,27 @@
+<div class="pages">
+  @for(page of pages$ | async; track page.number) {
+    <app-page [page] = page (addNote)="addNote($event)"></app-page>
+  } @empty{
+    <div>No data</div>
+  }
+
+  @if (isAddNoteOpen && addNoteItem) {
+    <app-add-notes
+      top="{{addNoteItem.top}}px"
+      left="{{addNoteItem.left}}px"
+      (saveNote)="saveNote($event)"
+      (closeAddNote)="closeAddNote()"></app-add-notes>
+  }
+
+  @for(note of notes; track note.id) {
+    <app-note
+      [note]="note"
+      (remove)="removeNote($event)"
+      (drag)="dragNote($event)"
+    ></app-note>
+  }
+  <div class="save_button">
+    <button (click)="saveDocument()">Сохранить документ</button>
+  </div>
+</div>
+

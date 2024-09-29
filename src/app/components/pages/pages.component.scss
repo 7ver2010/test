@@ -1,0 +1,17 @@
+.pages {
+  position: relative;
+  z-index: 1;
+  background-color: gray;
+}
+
+.save_button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  button {
+    height: 100px;
+    width: 100px;
+  }
+}
