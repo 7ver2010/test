@@ -52,14 +52,13 @@ export class NotesService {
 
   public removeNote(note: INote): boolean {
     const notes = this.getNotes();
-    const index = notes.findIndex((book) => book.text === note.text || book.image === note.image);
-    if(index > -1) {
-      notes.splice(index, 1);
-      localStorage.setItem(LS_NOTES_KEY, this.serializeBooks(notes));
+    const filteredNotes = notes.filter(item => note.id !== item.id);
+    try {
+      localStorage.setItem(LS_NOTES_KEY, this.serializeBooks(filteredNotes));
       return true;
+    } catch(error) {
+      return false;
     }
-
-    return false;
   }
 
   private parseBooks(stringifiedBook: string): INote[] {

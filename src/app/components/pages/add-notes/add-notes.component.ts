@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostBinding, Input, Output, EventEmitter, ChangeDetectionStrategy, HostListener } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 import { INote } from '@models';
@@ -21,6 +21,11 @@ export class AddNotesComponent {
 
   @Output() closeAddNote = new EventEmitter<void>();
   @Output() saveNote = new EventEmitter<INote>();
+
+  @HostListener('click', ['$event'])
+  public click(event: MouseEvent): void {
+    event.stopPropagation();
+  }
 
   public textControl = new FormControl<string>('');
   public imageControl = new FormControl<string | null>(null);

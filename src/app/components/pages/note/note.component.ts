@@ -12,11 +12,15 @@ import { INote } from '@models';
 })
 export class NoteComponent implements OnChanges {
   @HostBinding('style.top') top?: string;
-
   @HostBinding('style.left') left?: string;
 
   // TOFIX: Fast realisation. Ideal way would be with runOutsideAngular here and,
   // mouseup listener on main container through the service
+
+  @HostListener('click', ['$event'])
+  public click(event: MouseEvent): void {
+    event.stopPropagation();
+  }
 
   @HostListener('mousedown', ['$event'])
   public mouseDown(event: MouseEvent): void {

@@ -1,6 +1,6 @@
-<div class="pages">
+<div class="pages" (click)="addNote($event)">
   @for(page of pages$ | async; track page.number) {
-    <app-page [page] = page (addNote)="addNote($event)"></app-page>
+    <app-page [page]="page"></app-page>
   } @empty{
     <div>No data</div>
   }

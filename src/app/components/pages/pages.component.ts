@@ -37,8 +37,8 @@ export class PagesComponent implements OnInit, OnDestroy {
     this.notes = this.notesService.getNotes();
   }
 
-  public addNote(e: IAddNote<number>): void {
-      this.addNoteItem = e;
+  public addNote(e: MouseEvent): void {
+      this.addNoteItem = {top: e.pageY, left: e.pageX};
       this.isAddNoteOpen = true;
   }
 
