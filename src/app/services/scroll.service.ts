@@ -23,7 +23,7 @@ export class ScrollService {
     });
   }
 
-  // dont have time for this. Should be a scroll listener that change url page count.
+  // dont have time for this. Should be a scroll listener that change url page id.
   // IntersectionObserver should be useful for this.
   public handleScroll() {
 

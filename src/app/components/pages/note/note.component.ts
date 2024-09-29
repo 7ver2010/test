@@ -36,7 +36,7 @@ export class NoteComponent implements OnChanges {
         ? `${parseInt(this.top, 10) + event.movementY}px`
         : this.top
 
-        this.left = this.left
+      this.left = this.left
         ? `${parseInt(this.left, 10) + event.movementX}px`
         : this.left
     }
