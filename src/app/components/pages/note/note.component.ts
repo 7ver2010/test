@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input, HostListener, SimpleChanges, OnChanges, ChangeDetectionStrategy, OnDestroy, NgZone, Renderer2, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
+import { Component, HostBinding, Input, HostListener, SimpleChanges, OnChanges, ChangeDetectionStrategy, Output, EventEmitter, ElementRef, ViewChild } from '@angular/core';
 
 import { INote } from '@models';
 
